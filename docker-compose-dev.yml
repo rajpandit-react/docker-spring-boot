@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: docker-test1-service
+    container_name: docker-test1-service
+    ports:
+      - 8412:8412
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      SPRING_DATASOURCE_URL: r2dbc:mysql://mysql-container:3306/test
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Mysql@841287
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: Mysql@841287
+      MYSQL_DATABASE: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Mysql@841287

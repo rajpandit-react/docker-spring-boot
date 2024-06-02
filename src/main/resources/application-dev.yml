@@ -1,0 +1,8 @@
+server:
+  port: 8412
+
+  spring:
+    r2dbc:
+      url: r2dbc:mysql://localhost:3306/Accounts
+      username: root
+      password: Mysql@841287
